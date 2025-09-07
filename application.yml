@@ -1,0 +1,23 @@
+general:
+  kafka-topic: transactions
+
+spring:
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: midas-core
+      auto-offset-reset: earliest
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "com.jpmc.midascore.foundation"
+
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: admin
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+

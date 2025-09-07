@@ -1,8 +1,11 @@
 package com.jpmc.midascore.foundation;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Component
 public class Transaction {
     private long senderId;
     private long recipientId;

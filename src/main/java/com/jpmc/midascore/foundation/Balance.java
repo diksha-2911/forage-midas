@@ -1,8 +1,10 @@
 package com.jpmc.midascore.foundation;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.stereotype.Component;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Component
 public class Balance {
     private float amount;
 
